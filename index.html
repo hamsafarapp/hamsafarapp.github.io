@@ -299,6 +299,41 @@ main.wrap{padding-block:0 120px}
 .ad-ta{height:auto;padding:10px 14px;resize:vertical;line-height:1.8}
 .ad-file{height:auto;padding:10px}
 .ad-prev{max-width:100%;max-height:160px;border-radius:12px;object-fit:cover}
+
+/* ---------- بخش معرفی صفحه‌ی اصلی ---------- */
+.intro{padding:22px 18px 20px;text-align:center}
+.intro-wrap[hidden]{display:none}
+.intro-kicker{display:inline-block;font-size:13px;font-weight:700;color:var(--sun-text);background:var(--sun-soft);padding:4px 14px;border-radius:999px;margin:0 0 10px}
+.intro-slogan{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1.55;color:var(--ink);margin:0 auto;max-width:640px}
+.intro-lead{color:var(--ink-2);max-width:620px;margin:10px auto 0}
+.intro-grid{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+.intro-item{background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:16px 14px}
+.intro-item h3{margin:10px 0 4px;font-size:17px;color:var(--ink)}
+.intro-item p{margin:0;font-size:14px;line-height:1.8;color:var(--ink-2)}
+.intro-ic{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--accent-soft);color:var(--accent-text)}
+.intro-trust{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.intro-trust li{font-size:13px;color:var(--accent-text);background:var(--accent-soft);padding:6px 12px;border-radius:999px;line-height:1.7}
+.intro-trust li::before{content:"✓";margin-inline-end:6px;font-weight:700}
+.intro-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.intro-cta .btn{flex:1 1 150px;max-width:220px}
+.intro-wrap:not([hidden])~main #v-search>.pull{margin-top:16px}
+@media (max-width:639px){
+  .intro{padding:18px 14px 16px}
+  .intro-slogan{font-size:23px}
+  .intro-grid{grid-template-columns:1fr;gap:10px}
+  .intro-item{display:grid;grid-template-columns:52px 1fr;column-gap:12px;text-align:right;align-items:center;padding:12px}
+  .intro-ic{grid-row:1/3}
+  .intro-item h3{margin:0}
+  .intro-trust{flex-direction:column;align-items:stretch}
+  .intro-trust li{text-align:right;border-radius:12px}
+  .intro-cta .btn{max-width:none}
+}
+
+/* ---------- تأیید هویت ---------- */
+.vbadge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:var(--ok);background:var(--ok-soft);padding:1px 9px;border-radius:999px;white-space:nowrap;vertical-align:middle}
+.kyc-check{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.8;color:var(--ink);cursor:pointer}
+.kyc-check input{margin-top:6px;width:20px;height:20px;accent-color:var(--accent);flex:none}
+select.in{appearance:auto}
 </style>
 <style>html{padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}body{margin:0}</style>
 </head>
@@ -341,6 +376,41 @@ main.wrap{padding-block:0 120px}
     </div>
   </div>
 </header>
+
+<!-- معرفی هم‌سفر (فقط در صفحه‌ی اصلی) -->
+<div class="wrap intro-wrap" data-intro>
+  <section class="card intro pull" aria-labelledby="intro-title">
+    <p class="intro-kicker">هم‌سفر</p>
+    <h2 id="intro-title" class="intro-slogan">هم‌سفر؛ تنها سفر نکن، هم‌مسیر پیدا کن!</h2>
+    <p class="intro-lead">سفر بین‌شهری با خودروی شخصی، ساده و شفاف: راننده صندلی خالی را معرفی می‌کند، مسافر هم‌مسیر پیدا می‌کند و هزینه‌ی راه منصفانه تقسیم می‌شود.</p>
+    <ul class="intro-grid">
+      <li class="intro-item">
+        <span class="intro-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l1.4-4.6A2 2 0 0 1 8.3 10h7.4a2 2 0 0 1 1.9 1.4L19 16"/><path d="M3.5 16h17v3a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1h-8v1a1 1 0 0 1-1 1H5.5a1 1 0 0 1-1-1z"/><circle cx="7.5" cy="13.5" r=".6" fill="currentColor"/><circle cx="16.5" cy="13.5" r=".6" fill="currentColor"/><path d="M12 4v3M10.5 5.5h3"/></svg></span>
+        <h3>رانندگان</h3>
+        <p>صندلی‌های خالی خودروی‌تان را با مسافران هم‌مسیر به اشتراک بگذارید.</p>
+      </li>
+      <li class="intro-item">
+        <span class="intro-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/><path d="M8 10.5h5M11 8.5l2 2-2 2"/></svg></span>
+        <h3>مسافران</h3>
+        <p>هم‌مسیر و خودرو برای سفرتان را در چند ثانیه پیدا کنید.</p>
+      </li>
+      <li class="intro-item">
+        <span class="intro-ic" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v10M14.6 9.4c-.6-.8-1.6-1.2-2.6-1.2-1.5 0-2.6.8-2.6 1.9 0 2.6 5.4 1.2 5.4 3.8 0 1.1-1.2 1.9-2.8 1.9-1.1 0-2.1-.4-2.8-1.2"/></svg></span>
+        <h3>صرفه‌جویی</h3>
+        <p>هزینه‌ی بنزین و عوارض بین همه تقسیم می‌شود و سفر ارزان‌تر تمام می‌شود.</p>
+      </li>
+    </ul>
+    <ul class="intro-trust" aria-label="چرا اعتماد کنیم">
+      <li>شماره‌ی تلفن فقط بعد از تأیید به طرف مقابل نشان داده می‌شود</li>
+      <li>سهم هر نفر از هزینه، شفاف و پیش از سفر مشخص است</li>
+      <li>ثبت سفر و جست‌وجو بدون پیچیدگی</li>
+    </ul>
+    <div class="intro-cta">
+      <a class="btn btn-primary" href="#driver" data-nav="driver">ثبت سفر</a>
+      <a class="btn btn-ghost" href="#s-form" data-intro-search>جست‌وجوی سفر</a>
+    </div>
+  </section>
+</div>
 
 <main class="wrap">
 
@@ -428,6 +498,7 @@ main.wrap{padding-block:0 120px}
         <div class="stack">
           <div data-net></div>
           <p class="notice" id="d-login-note" hidden></p>
+          <p class="notice" id="d-kyc-note" hidden></p>
           <div class="row2">
             <div class="field">
               <label class="lbl" for="d-origin">مبدأ</label>
@@ -700,7 +771,9 @@ const net={status:REMOTE.on?'loading':'off',last:0,loading:false,sig:'',msg:''};
 const SKEY='hamsafar_session_v1';
 let session=(function(){try{const s=JSON.parse(localStorage.getItem(SKEY)||'null');return s&&s.access_token&&s.refresh_token&&s.user&&/^[0-9a-f-]{36}$/i.test(String(s.user.id))?s:null}catch(_){return null}})();
 let profile=null;
-const mine={reqs:[],tripReqs:[],trips:[],comm:[],cinfo:null,past:[],block:null,pays:[],ads:[],loaded:false};
+const mine={reqs:[],tripReqs:[],trips:[],comm:[],cinfo:null,past:[],block:null,pays:[],ads:[],kyc:null,loaded:false};
+const kyc={required:false,drivers:new Set(),passengers:new Set()};
+const UUID_RE=/^[0-9a-f-]{36}$/i;
 function saveSession(s){session=s;try{if(s)localStorage.setItem(SKEY,JSON.stringify(s));else localStorage.removeItem(SKEY)}catch(_){}}
 function adoptSession(j){
   if(!j||!j.access_token||!j.refresh_token||!j.user||!/^[0-9a-f-]{36}$/i.test(String(j.user.id)))throw{kind:'http',status:500,data:{}};
@@ -786,6 +859,16 @@ const ERR_TEXT={
   ad_daily_limit:'در ۲۴ ساعت گذشته تبلیغ زیادی ثبت کرده‌اید. فردا دوباره تلاش کنید.',
   ads_busy:'صف بررسی تبلیغات فعلاً پر است. بعداً تلاش کنید.',
   duplicate_ad:'تبلیغی با همین نام کسب‌وکار از شما در انتظار یا نمایش است.',
+  kyc_required:'برای ثبت سفر باید هویت راننده تأیید شده باشد. در «حساب من» بخش «تأیید هویت» مدارک را بفرستید.',
+  bad_kyc_role:'نوع حساب (راننده یا مسافر) درست انتخاب نشده است.',
+  bad_kyc_name:'نام روی مدرک باید ۳ تا ۶۰ حرف باشد و علامت < یا > نداشته باشد.',
+  bad_kyc_nid:'۴ رقم آخر کد ملی را درست وارد کنید.',
+  bad_kyc_plate:'پلاک خودرو را وارد کنید (۳ تا ۲۰ حرف).',
+  bad_kyc_docs:'تصاویر مدارک کامل یا درست نیست. همه‌ی تصاویر لازم را دوباره انتخاب و ارسال کنید.',
+  already_verified:'هویت شما قبلاً تأیید شده است.',
+  already_pending:'مدارک شما همین حالا در صف بررسی است.',
+  kyc_attempts_exceeded:'تعداد دفعات ارسال مدارک پر شده است. با پشتیبانی تماس بگیرید.',
+  upload_failed:'بارگذاری تصویر انجام نشد. اینترنت را بررسی کنید و دوباره تلاش کنید. اگر تکرار شد، احتمالاً بخش «تأیید هویت» هنوز در Supabase راه‌اندازی نشده است.',
   commission_disabled:'سیستم کمیسیون هنوز فعال نشده است.',
   trip_not_started:'هنوز زمان حرکت این سفر نرسیده است.',
   no_approved_passengers:'این سفر مسافر تأییدشده نداشت، پس کمیسیونی ندارد.',
@@ -860,7 +943,7 @@ async function loadMine(){
   if(!session||!REMOTE.on)return;
   const out=await Promise.all([rpc('my_requests').catch(()=>null),rpc('my_trip_requests').catch(()=>null),
     rpc('commission_info').catch(()=>null),rpc('my_commissions').catch(()=>null),
-    rest('trips?select='+TRIP_COLS+'&driver_id=eq.'+session.user.id+'&status=eq.open&trip_date=lt.'+key(TODAY)+'&order=trip_date.desc&limit=30').catch(()=>null),rpc('my_block_status').catch(()=>null),rpc('my_payments').catch(()=>null),rpc('my_ads').catch(()=>null)]);
+    rest('trips?select='+TRIP_COLS+'&driver_id=eq.'+session.user.id+'&status=eq.open&trip_date=lt.'+key(TODAY)+'&order=trip_date.desc&limit=30').catch(()=>null),rpc('my_block_status').catch(()=>null),rpc('my_payments').catch(()=>null),rpc('my_ads').catch(()=>null),rpc('kyc_status').catch(()=>null)]);
   if(Array.isArray(out[0]))mine.reqs=out[0];
   if(Array.isArray(out[1]))mine.tripReqs=out[1];
   mine.cinfo=(out[2]&&typeof out[2]==='object'&&!Array.isArray(out[2]))?out[2]:null;
@@ -868,6 +951,9 @@ async function loadMine(){
   mine.block=(out[5]&&out[5].blocked)?{reason:String(out[5].reason||'').slice(0,200)}:null;
   mine.pays=Array.isArray(out[6])?out[6]:[];
   mine.ads=Array.isArray(out[7])?out[7]:[];
+  const ks=out[8];
+  mine.kyc=(ks&&typeof ks==='object'&&['none','pending','approved','rejected'].indexOf(ks.status)>=0)?{status:ks.status,role:ks.role==='driver'?'driver':(ks.role==='passenger'?'passenger':''),note:ks.note?String(ks.note).slice(0,300):'',left:Number.isInteger(ks.attempts_left)?ks.attempts_left:5}:null;
+  kyc.required=!!(ks&&ks.required_for_drivers);
   mine.past=Array.isArray(out[4])?out[4].map(rowToTrip).filter(t=>t&&t.mine):[];
   mine.loaded=true;
 }
@@ -876,13 +962,18 @@ async function loadRemote(){
   net.loading=true;
   if(!net.last)paintNet();
   try{
-    const rows=await rest('trips?select='+TRIP_COLS+'&trip_date=gte.'+key(TODAY)+'&order=trip_date.asc,depart_minute.asc&limit=500');
+    const got=await Promise.all([rest('trips?select='+TRIP_COLS+'&trip_date=gte.'+key(TODAY)+'&order=trip_date.asc,depart_minute.asc&limit=500'),rpc('verified_users').catch(()=>null)]);
+    const rows=got[0],vu=got[1];
+    if(vu&&typeof vu==='object'){
+      kyc.drivers=new Set((Array.isArray(vu.drivers)?vu.drivers:[]).map(String).filter(x=>UUID_RE.test(x)));
+      kyc.passengers=new Set((Array.isArray(vu.passengers)?vu.passengers:[]).map(String).filter(x=>UUID_RE.test(x)));
+    }
     const all=(Array.isArray(rows)?rows:[]).map(rowToTrip).filter(Boolean);
     const list=all.filter(t=>t.status==='open');
     mine.trips=all.filter(t=>t.mine);
     if(session&&!profile)await loadProfile();
     if(session)await loadMine();
-    const sig=all.map(t=>t.id+':'+t.free+':'+t.status+':'+(t.mine?1:0)).join(',')+'|'+JSON.stringify(mine.reqs)+JSON.stringify(mine.tripReqs)+JSON.stringify(mine.comm)+JSON.stringify(mine.cinfo)+mine.past.map(t=>t.id).join(',')+(mine.block?'B':'')+JSON.stringify(mine.pays)+JSON.stringify(mine.ads);
+    const sig=all.map(t=>t.id+':'+t.free+':'+t.status+':'+(t.mine?1:0)).join(',')+'|'+JSON.stringify(mine.reqs)+JSON.stringify(mine.tripReqs)+JSON.stringify(mine.comm)+JSON.stringify(mine.cinfo)+mine.past.map(t=>t.id).join(',')+(mine.block?'B':'')+JSON.stringify(mine.pays)+JSON.stringify(mine.ads)+JSON.stringify(mine.kyc)+kyc.required+'|'+Array.from(kyc.drivers).sort().join(',');
     net.status='ok';net.last=Date.now();
     if(sig!==net.sig){
       net.sig=sig;
@@ -1015,6 +1106,14 @@ function nearCity(raw){
   });
   return best?best.c:null;
 }
+const VB_TIP='مدارک این کاربر توسط مدیر هم‌سفر بررسی و تأیید شده است. این بررسی استعلام رسمی نیست.';
+function vBadge(t){return(t&&t.driverId&&kyc.drivers.has(t.driverId))?' <span class="vbadge" title="'+VB_TIP+'">✓ هویت تأییدشده</span>':''}
+function cardBtn(t){
+  if(t.source!=='shared')return 'جزئیات و انتخاب';
+  if(t.mine)return 'سفر شما';
+  if(canRequest(t))return 'درخواست صندلی';
+  return myReq(t)?'وضعیت درخواست':'جزئیات';
+}
 function tripCard(t){
   const rel=relOf(t.date);
   const arrM=t.dur!=null?t.start+t.dur:null;
@@ -1030,9 +1129,9 @@ function tripCard(t){
     '</div>'+
     '<div class="perf" aria-hidden="true"></div>'+
     '<div class="t-foot">'+
-      '<div class="drv"><span class="av" aria-hidden="true">'+esc(t.driver.trim().charAt(0))+'</span><div><strong>'+esc(t.driver)+'</strong><small>'+esc(t.source==='shared'&&t.car==='ثبت نشده'?'ثبت‌شده توسط کاربر':t.car)+'</small></div></div>'+
+      '<div class="drv"><span class="av" aria-hidden="true">'+esc(t.driver.trim().charAt(0))+'</span><div><strong>'+esc(t.driver)+'</strong>'+vBadge(t)+'<small>'+esc(t.source==='shared'&&t.car==='ثبت نشده'?'ثبت‌شده توسط کاربر':t.car)+'</small></div></div>'+
       '<div class="pricebox"><div class="price">'+fmt(t.price)+'<small>تومان برای هر نفر</small></div>'+
-      '<button class="btn btn-primary btn-sm" type="button" data-open="'+t.id+'">جزئیات و انتخاب</button></div>'+
+      '<button class="btn btn-primary btn-sm" type="button" data-open="'+t.id+'">'+cardBtn(t)+'</button></div>'+
     '</div></article>';
 }
 
@@ -1145,7 +1244,7 @@ function renderModal(){
   let h='<div class="m-head"><div><h2 id="m-title">'+esc(t.from)+' ← '+esc(t.to)+'</h2><p class="muted">'+(relOf(t.date)?relOf(t.date)+'، ':'')+dayLabel(t.date,true)+'، ساعت '+clock(t.start)+'</p></div>'+
     '<button class="x" type="button" data-close aria-label="بستن">×</button></div>'+
     '<p class="demo-note">'+(t.source==='shared'?'این سفر را یکی از کاربران ثبت کرده است. با «درخواست صندلی» پیام شما برای راننده می‌رود و شماره‌ی راننده فقط بعد از تأیید او نشان داده می‌شود. پرداختی انجام نمی‌شود.':(t.source==='local'?'این سفر را شما در همین صفحه ثبت کرده‌اید و فقط روی همین دستگاه دیده می‌شود.':'این یک سفر نمونه است. راننده و خودرو واقعی نیستند.'))+'</p>'+
-    '<dl class="facts"><div><dt>راننده</dt><dd>'+esc(t.driver)+'</dd></div><div><dt>خودرو</dt><dd>'+esc(t.car)+'</dd></div>'+
+    '<dl class="facts"><div><dt>راننده</dt><dd>'+esc(t.driver)+vBadge(t)+'</dd></div><div><dt>خودرو</dt><dd>'+esc(t.car)+'</dd></div>'+
     '<div><dt>محل سوار شدن</dt><dd>'+esc(t.meet)+'</dd></div><div><dt>رسیدن تقریبی</dt><dd>'+arr+'</dd></div>'+
     '<div><dt>مسافت</dt><dd>'+(t.km?toFa(t.km)+' کیلومتر':'نامشخص')+'</dd></div><div><dt>صندلی خالی</dt><dd>'+toFa(t.free)+' از '+toFa(t.cap)+'</dd></div></dl>';
   if(t.tags.length)h+='<div class="chips">'+t.tags.map(x=>'<span class="chip">'+esc(x)+'</span>').join('')+'</div>';
@@ -1292,6 +1391,7 @@ $('#d-form').addEventListener('submit',async e=>{
   else if(markup(meet))errs['d-meet']='محل سوار شدن نباید شامل علامت < یا > باشد.';
   if(!applyErrors(errs,['d-origin','d-dest','d-date','d-time','d-price','d-car','d-meet'],'d-form-err'))return;
   if(REMOTE.problem){$('#d-form-err').textContent='ثبت سفر انجام نشد. '+REMOTE.problem;return}
+  if(REMOTE.on&&hasProfile()&&kyc.required&&mine.loaded&&!kycDriverOk()){$('#d-form-err').textContent=ERR_TEXT.kyc_required;paintAuth();return}
   if(REMOTE.on&&!hasProfile()){$('#d-form-err').textContent='برای ثبت سفر ابتدا وارد شوید و نام و شماره‌ی خود را در «حساب من» ذخیره کنید.';paintAuth();return}
   let t;
   if(REMOTE.on){
@@ -1511,9 +1611,220 @@ function mainHTML(){
   const reqs=mine.reqs;
   return '<div class="card pull"><div class="me-head"><span class="av" aria-hidden="true">'+esc(profile.name.charAt(0))+'</span><div><strong>'+esc(profile.name)+'</strong><div class="help">'+phoneHTML(profile.phone,profile.verified)+'</div></div></div>'+meMsg()+
       '<div class="actions"><button class="btn btn-ghost btn-sm" type="button" data-me="edit-profile">ویرایش نام و شماره</button><button class="btn btn-warn btn-sm" type="button" data-me="logout">'+(meUi.confirmOut?'مطمئنم، خارج شوم':'خروج')+'</button></div></div>'+
-    blockCard()+commCard()+myAdsCard()+'<div class="card"><h2>سفرهای من (به‌عنوان راننده)</h2>'+(trips.length?'<div class="stack">'+trips.map(tripBlock).join('')+'</div>':'<p class="help">هنوز سفری ثبت نکرده‌اید. از بخش «ثبت سفر» شروع کنید.</p>')+'</div>'+
+    blockCard()+kycCard()+commCard()+myAdsCard()+'<div class="card"><h2>سفرهای من (به‌عنوان راننده)</h2>'+(trips.length?'<div class="stack">'+trips.map(tripBlock).join('')+'</div>':'<p class="help">هنوز سفری ثبت نکرده‌اید. از بخش «ثبت سفر» شروع کنید.</p>')+'</div>'+
     '<div class="card"><h2>درخواست‌های صندلی من (به‌عنوان مسافر)</h2>'+(reqs.length?'<div class="stack">'+reqs.map(reqRowPassenger).join('')+'</div>':'<p class="help">هنوز درخواستی نداده‌اید. در جست‌وجو یک سفر را باز کنید و «درخواست صندلی» را بزنید.</p>')+'</div>';
 }
+
+/* ---------- تأیید هویت (فاز ۱: بررسی مدارک با مدیر؛ بدون OCR و بدون استعلام رسمی) ---------- */
+const kycUi={role:'',name:'',l4:'',plate:'',consent:false,files:{},ocr:{},ocrBusy:0,warned:false,busy:false,err:''};
+const KYC_TYPES={national_id:'تصویر کارت ملی (روی کارت)',license:'تصویر گواهینامه',vehicle_card:'تصویر کارت خودرو (سند)'};
+const kycNeed=r=>r==='driver'?['national_id','license','vehicle_card']:['national_id'];
+const kycNt=s=>String(s).replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/[‎‏]/g,'').replace(/\s+/g,' ').trim();   // نیم‌فاصله حفظ می‌شود
+
+/*OCR-PURE-START*/
+const ocrNorm=s=>String(s).replace(/[يى]/g,'ی').replace(/ك/g,'ک').replace(/[ً-ٰٟـ‌‍‎‏\s]/g,'').toLowerCase();
+function nidValid(c){
+  if(!/^\d{10}$/.test(c)||/^(\d)\1{9}$/.test(c))return false;
+  let s=0;for(let i=0;i<9;i++)s+=(+c[i])*(10-i);
+  const r=s%11,k=+c[9];return r<2?k===r:k===11-r;
+}
+function ocrNid4(text,l4){
+  const runs=toEn(text).match(/\d[\d\s\-]*\d/g)||[];
+  let valid=false,end=false,weak=false;
+  runs.forEach(run=>{
+    const d=run.replace(/\D/g,'');
+    for(let i=0;i+10<=d.length;i++){
+      const w=d.slice(i,i+10),last=w.slice(6)===l4;
+      if(nidValid(w)){valid=true;if(last)end=true}else if(last)weak=true;
+    }
+  });
+  return end?'match':(valid?'mismatch':(weak?'match':'unread'));
+}
+function ocrName(text,name){
+  const t=ocrNorm(text),toks=String(name).split(/\s+/).map(ocrNorm).filter(x=>x.length>=2);
+  if(!toks.length)return 'unread';
+  const f=toks.filter(x=>t.indexOf(x)>=0).length,r=f/toks.length;
+  if(r>=0.6)return 'match';
+  return(f===0&&t.length>=20)?'mismatch':'unread';
+}
+function ocrPlate(text,plate){
+  const groups=(toEn(plate).match(/\d+/g)||[]).filter(x=>x.length>=2);
+  if(!groups.length)return 'unread';
+  const t=toEn(text),f=groups.filter(g=>t.indexOf(g)>=0).length;
+  if(f===groups.length)return 'match';
+  const total=(t.match(/\d/g)||[]).length;
+  return(f===0&&total>=8)?'mismatch':'unread';
+}
+const OCR_KW={national_id:['کدملی','کارتملی','جمهوری','اسلامی','ملی'],license:['گواهینامه','رانندگی','پایه'],vehicle_card:['خودرو','شناسنامه','سواری','پلاک','مالک']};
+function ocrAnalyze(type,text,conf,form){
+  const t=ocrNorm(text||'');
+  const out={ran:true,readable:t.length>=15&&Number(conf)>=35,kw:(OCR_KW[type]||[]).some(k=>t.indexOf(k)>=0)};
+  if(type==='national_id')out.nid4=ocrNid4(text||'',form.l4);
+  if(type==='national_id'||type==='license')out.name=ocrName(text||'',form.name);
+  if(type==='vehicle_card')out.plate=ocrPlate(text||'',form.plate);
+  return out;
+}
+/*OCR-PURE-END*/
+const OCR_BASE=(function(){
+  const b=String(CFG.ocrBase||'');
+  if(CFG.ocr!==true||!/^(?:\.\/)?[A-Za-z0-9_\-]+(?:\/[A-Za-z0-9_\-.]+)*\/?$/.test(b)||b.indexOf('..')>=0)return '';
+  return b.replace(/\/?$/,'/');
+})();
+const OCR_ON=!!OCR_BASE;
+let tessP=null;
+function ocrLoadLib(){
+  if(window.Tesseract)return Promise.resolve(window.Tesseract);
+  if(tessP)return tessP;
+  tessP=new Promise((res,rej)=>{const s=document.createElement('script');s.src=OCR_BASE+'tesseract.min.js';s.onload=()=>window.Tesseract?res(window.Tesseract):rej(new Error('lib'));s.onerror=()=>rej(new Error('load'));document.head.appendChild(s)});
+  tessP.catch(()=>{tessP=null});
+  return tessP;
+}
+async function ocrDefaultEngine(blob){
+  const T=await ocrLoadLib();
+  const w=await T.createWorker('fas',1,{workerPath:OCR_BASE+'worker.min.js',corePath:OCR_BASE+'core/',langPath:OCR_BASE+'lang/'});
+  try{const r=await w.recognize(blob);return{text:String((r&&r.data&&r.data.text)||''),conf:Number(r&&r.data&&r.data.confidence)||0}}
+  finally{try{await w.terminate()}catch(_){}}
+}
+function ocrRun(blob){
+  const eng=window.HAMSAFAR_OCR_ENGINE||ocrDefaultEngine;
+  return Promise.race([Promise.resolve().then(()=>eng(blob)),new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),120000))]);
+}
+const OCR_LBL={national_id:'کارت ملی',license:'گواهینامه',vehicle_card:'کارت خودرو'};
+function ocrCollect(role){
+  const form={name:kycNt(kycUi.name),l4:toEn(kycUi.l4).trim(),plate:kycNt(kycUi.plate)},res={},msgs=[];
+  kycNeed(role).forEach(ty=>{
+    const o=kycUi.ocr[ty];
+    if(!o||o.fail){res[ty]={ran:false,readable:false};return}
+    const r=ocrAnalyze(ty,o.text,o.conf,form);res[ty]=r;
+    if(!r.readable)msgs.push(OCR_LBL[ty]+': تصویر خوانا نیست؛ عکس واضح‌تر و بدون بازتاب بگیرید.');
+    if(r.nid4==='mismatch')msgs.push(OCR_LBL[ty]+': ۴ رقم آخر کد ملی روی عکس با عددی که وارد کردید نمی‌خواند.');
+    if(r.nid4==='unread')msgs.push(OCR_LBL[ty]+': کد ملی از روی عکس خوانده نشد.');
+    if(r.name==='mismatch')msgs.push(OCR_LBL[ty]+': نام روی عکس با نامی که وارد کردید نمی‌خواند.');
+    if(r.plate==='mismatch')msgs.push(OCR_LBL[ty]+': پلاک روی عکس با پلاک واردشده نمی‌خواند.');
+  });
+  return{res:res,msgs:msgs};
+}
+const kycDriverOk=()=>!!(mine.kyc&&mine.kyc.status==='approved'&&mine.kyc.role==='driver');
+function kycFormHTML(){
+  const role=kycUi.role||'driver',need=kycNeed(role);
+  let h='<form id="kyc-form" class="stack" novalidate>';
+  h+='<div class="field"><label class="lbl" for="kyc-role">نوع تأیید</label><select class="in" id="kyc-role"><option value="driver"'+(role==='driver'?' selected':'')+'>راننده (کارت ملی + گواهینامه + کارت خودرو)</option><option value="passenger"'+(role==='passenger'?' selected':'')+'>مسافر (فقط کارت ملی)، اختیاری</option></select></div>';
+  h+='<div class="field"><label class="lbl" for="kyc-name">نام و نام خانوادگی روی مدرک</label><input class="in" id="kyc-name" maxlength="60" autocomplete="off" value="'+esc(kycUi.name)+'"></div>';
+  h+='<div class="field"><label class="lbl" for="kyc-l4">۴ رقم آخر کد ملی</label><input class="in" id="kyc-l4" inputmode="numeric" maxlength="4" autocomplete="off" dir="ltr" value="'+esc(kycUi.l4)+'"><p class="help">فقط ۴ رقم آخر را می‌گیریم؛ کد ملی کامل ذخیره نمی‌شود.</p></div>';
+  if(role==='driver')h+='<div class="field"><label class="lbl" for="kyc-plate">پلاک خودرو</label><input class="in" id="kyc-plate" maxlength="20" autocomplete="off" value="'+esc(kycUi.plate)+'"></div>';
+  need.forEach(ty=>{const f=kycUi.files[ty];h+='<div class="field"><label class="lbl" for="kyc-f-'+ty+'">'+KYC_TYPES[ty]+'</label><input class="in" type="file" id="kyc-f-'+ty+'" accept="image/*" data-kyc-file="'+ty+'"><p class="help" id="kyc-fs-'+ty+'">'+(f?'✓ انتخاب شد ('+toFa(Math.round(f.size/1024))+' کیلوبایت)'+(f.note?' · '+esc(f.note):''):'هنوز انتخاب نشده')+'</p></div>'});
+  h+='<label class="kyc-check"><input type="checkbox" id="kyc-consent"'+(kycUi.consent?' checked':'')+'> موافقم تصاویر مدارکم فقط برای بررسی مدیر هم‌سفر در محل خصوصی ذخیره شود و پس از پایان بررسی و مدتی کوتاه حذف شود.</label>';
+  h+='<p class="help">تصاویر قبل از ارسال در همین گوشی کوچک می‌شوند'+(OCR_ON?' و متن‌شان روی همین گوشی خوانده می‌شود (متن خوانده‌شده ارسال یا ذخیره نمی‌شود، فقط «می‌خواند/نمی‌خواند»؛ تأیید نهایی با مدیر است)':'')+'. هیچ‌کس جز مدیر آن‌ها را نمی‌بیند و عمومی نمی‌شوند. این بررسی «استعلام رسمی» نیست و نشان تأیید فقط یعنی مدیر مدارک را دیده است.</p>';
+  h+='<p class="err" id="kyc-err" aria-live="polite">'+esc(kycUi.err)+'</p>';
+  h+='<div class="actions"><button class="btn btn-primary" type="submit"'+(meUi.busy?' disabled':'')+'>'+(meUi.busy?'در حال ارسال…':'ارسال مدارک برای بررسی')+'</button></div></form>';
+  return h;
+}
+function kycCard(){
+  const k=mine.kyc;if(!k)return '';
+  const need=kyc.required&&!kycDriverOk()?'<p class="notice">برای ثبت سفر، تأیید هویت راننده لازم است.</p>':'';
+  if(k.status==='approved')return '<div class="card"><h2>تأیید هویت</h2><div class="done"><strong><span class="vbadge">✓ هویت تأییدشده</span></strong><span>مدارک شما ('+(k.role==='driver'?'راننده':'مسافر')+') توسط مدیر بررسی و تأیید شده است.</span></div><p class="help">اگر مدارک‌تان عوض شد، با پشتیبانی تماس بگیرید.</p></div>';
+  if(k.status==='pending')return '<div class="card"><h2>تأیید هویت</h2>'+need+'<p class="notice">مدارک شما دریافت شد و در صف بررسی مدیر است. نتیجه همین‌جا نشان داده می‌شود.</p></div>';
+  let h='<div class="card"><h2>تأیید هویت</h2>'+need;
+  if(k.status==='rejected')h+='<p class="notice">مدارک قبلی شما تأیید نشد'+(k.note?'. دلیل: '+esc(toFa(k.note)):'')+'.'+(k.left>0?' می‌توانید دوباره بفرستید ('+toFa(k.left)+' بار فرصت باقی است).':' فرصت ارسال دوباره تمام شده؛ با پشتیبانی تماس بگیرید.')+'</p>';
+  if(k.status==='rejected'&&k.left<=0)return h+'</div>';
+  return h+'<p class="help">راننده‌ها برای ثبت سفر باید مدارکشان تأیید شود. مسافران اختیاری هستند و بدون آن هم می‌توانند از سایت استفاده کنند.</p>'+kycFormHTML()+'</div>';
+}
+function kycShrink(file){
+  return new Promise((res,rej)=>{
+    if(!file||!/^image\//.test(file.type)){rej(new Error('type'));return}
+    const url=URL.createObjectURL(file),img=new Image();
+    img.onload=()=>{
+      URL.revokeObjectURL(url);
+      let w=img.naturalWidth,h=img.naturalHeight;if(!w||!h){rej(new Error('size'));return}
+      const k=Math.min(1,1600/Math.max(w,h));w=Math.round(w*k);h=Math.round(h*k);
+      const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,w,h);x.drawImage(img,0,0,w,h);
+      let q=.85;
+      const step=()=>c.toBlob(b=>{if(!b){rej(new Error('enc'));return}if(b.size>900000&&q>.4){q-=.15;step();return}if(b.size>1000000){rej(new Error('big'));return}res(b)},'image/jpeg',q);
+      step();
+    };
+    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('decode'))};
+    img.src=url;
+  });
+}
+async function kycUpload(path,blob){
+  const tok=await freshToken();
+  if(!tok)throw{kind:'http',status:401,data:{message:'login_required'}};
+  const ctl=new AbortController(),tm=setTimeout(()=>ctl.abort(),60000);
+  let res;
+  try{res=await fetch(REMOTE.url+'/storage/v1/object/kyc-docs/'+path,{method:'POST',headers:{apikey:REMOTE.key,Authorization:'Bearer '+tok,'Content-Type':'image/jpeg','x-upsert':'false'},body:blob,signal:ctl.signal,cache:'no-store'})}
+  catch(_){throw{kind:'network'}}
+  finally{clearTimeout(tm)}
+  if(!res.ok)throw{kind:'http',status:res.status,data:{message:'upload_failed'}};
+}
+function kycSubmit(){
+  const role=kycUi.role||'driver',need=kycNeed(role);
+  const name=kycNt(kycUi.name),l4=toEn(kycUi.l4).trim(),plate=kycNt(kycUi.plate);
+  const fail=m=>{kycUi.err=m;renderMe()};
+  if(name.length<3||name.length>60||/[<>]/.test(name))return fail(ERR_TEXT.bad_kyc_name);
+  if(!/^\d{4}$/.test(l4))return fail(ERR_TEXT.bad_kyc_nid);
+  if(role==='driver'&&(plate.length<3||plate.length>20||/[<>]/.test(plate)))return fail(ERR_TEXT.bad_kyc_plate);
+  for(const ty of need){if(!kycUi.files[ty])return fail('تصویر «'+KYC_TYPES[ty]+'» را انتخاب کنید.')}
+  if(!kycUi.consent)return fail('برای ارسال باید با ذخیره‌ی خصوصی و بررسی مدارک موافقت کنید.');
+  let pocr=null;
+  if(OCR_ON){
+    if(kycUi.ocrBusy>0)return fail('خواندن خودکار تصویر هنوز تمام نشده؛ چند ثانیه صبر کنید.');
+    const c=ocrCollect(role);pocr=c.res;
+    if(c.msgs.length&&!kycUi.warned){kycUi.warned=true;return fail('بررسی خودکار: '+c.msgs.join(' ')+' اگر درست است دوباره «ارسال» را بزنید تا مدیر بررسی کند؛ وگرنه اصلاح کنید.')}
+  }
+  kycUi.err='';
+  meRun(async()=>{
+    const uid=session.user.id,base=Date.now(),paths=[];
+    for(let i=0;i<need.length;i++){
+      const p=uid+'/'+need[i]+'-'+(base+i)+'.jpg';
+      await kycUpload(p,kycUi.files[need[i]].blob);
+      paths.push(p);
+    }
+    const a={p_role:role,p_doc_name:name,p_nid_last4:l4,p_plate:role==='driver'?plate:'',p_paths:paths};
+    if(pocr){
+      try{await rpc('kyc_submit',Object.assign({p_ocr:pocr},a))}
+      catch(e){if(e&&e.kind==='http'&&(e.status===404||(e.data&&e.data.code==='PGRST202')))await rpc('kyc_submit',a);else throw e}   // SQL فاز ۲ هنوز اجرا نشده: بدون OCR ثبت شود
+    }else await rpc('kyc_submit',a);
+    kycUi.files={};kycUi.ocr={};kycUi.warned=false;kycUi.consent=false;kycUi.name='';kycUi.l4='';kycUi.plate='';
+    await reloadNow();
+  },'مدارک شما ارسال شد و در صف بررسی مدیر است.');
+}
+$('#me-box').addEventListener('input',e=>{
+  const id=e.target.id;
+  if(id.indexOf('kyc-')===0)kycUi.warned=false;
+  if(id==='kyc-name')kycUi.name=e.target.value;
+  else if(id==='kyc-l4')kycUi.l4=e.target.value;
+  else if(id==='kyc-plate')kycUi.plate=e.target.value;
+});
+$('#me-box').addEventListener('change',async e=>{
+  const t=e.target,id=t.id;
+  if(id==='kyc-role'){kycUi.role=t.value==='passenger'?'passenger':'driver';kycUi.err='';renderMe();return}
+  if(id==='kyc-consent'){kycUi.consent=!!t.checked;return}
+  const ty=t.dataset&&t.dataset.kycFile;
+  if(ty&&KYC_TYPES[ty]){
+    const st=$('#kyc-fs-'+ty),f=t.files&&t.files[0];
+    if(!f){delete kycUi.files[ty];if(st)st.textContent='هنوز انتخاب نشده';return}
+    if(st)st.textContent='در حال آماده‌سازی تصویر…';
+    try{
+      const b=await kycShrink(f);kycUi.files[ty]={blob:b,size:b.size,note:''};kycUi.warned=false;delete kycUi.ocr[ty];
+      const base='✓ انتخاب شد ('+toFa(Math.round(b.size/1024))+' کیلوبایت)';
+      if(st)st.textContent=base;
+      if(OCR_ON){
+        kycUi.ocrBusy++;if(st)st.textContent=base+' · در حال خواندن متن تصویر روی همین گوشی…';
+        try{
+          const r=await ocrRun(b),txt=String((r&&r.text)||''),cf=Number(r&&r.conf)||0;
+          if(kycUi.files[ty]&&kycUi.files[ty].blob===b){
+            kycUi.ocr[ty]={text:txt,conf:cf};
+            const ok=ocrNorm(txt).length>=15&&cf>=35;
+            kycUi.files[ty].note=ok?'متن خوانده شد':'⚠ تصویر خوانا نیست؛ عکس واضح‌تر بگیرید';
+          }
+        }catch(_){if(kycUi.files[ty]&&kycUi.files[ty].blob===b){kycUi.ocr[ty]={fail:true};kycUi.files[ty].note='خواندن خودکار انجام نشد (اشکالی ندارد؛ مدیر بررسی می‌کند)'}}
+        finally{kycUi.ocrBusy--}
+        const s2=$('#kyc-fs-'+ty);if(s2&&kycUi.files[ty])s2.textContent=base+(kycUi.files[ty].note?' · '+kycUi.files[ty].note:'');
+      }
+    }
+    catch(_){delete kycUi.files[ty];if(st)st.textContent='این فایل تصویر قابل‌خواندن نیست. عکس دیگری انتخاب کنید.';t.value=''}
+  }
+});
 function renderMe(){
   const box=$('#me-box');if(!box)return;
   if(!REMOTE.on){box.innerHTML='<div class="card pull"><h2>حساب من</h2><p class="notice">'+esc(REMOTE.problem||'حساب کاربری فقط وقتی کار می‌کند که سایت به پایگاه داده‌ی مشترک وصل باشد. فعلاً در حالت محلی هستید.')+'</p></div>';return}
@@ -1523,7 +1834,17 @@ function renderMe(){
   if(!hasProfile()||meUi.edit){box.innerHTML=profileHTML();return}
   box.innerHTML=mainHTML();
 }
+function paintKycNote(){
+  const k=$('#d-kyc-note');if(!k)return;
+  const need=REMOTE.on&&hasProfile()&&kyc.required&&!kycDriverOk();
+  k.hidden=!need;
+  if(need){
+    const s=mine.kyc?mine.kyc.status:'none';
+    k.innerHTML='برای ثبت سفر باید هویت راننده تأیید شده باشد. '+(s==='pending'?'مدارک شما در صف بررسی مدیر است.':(s==='rejected'?'مدارک قبلی تأیید نشد؛ دوباره بفرستید.':'مدارک خود را بفرستید.'))+' <button type="button" class="linkbtn" data-goto-me="driver">رفتن به «تأیید هویت»</button>';
+  }
+}
 function paintAuth(){
+  paintKycNote();
   const el=$('#d-login-note');
   if(!el)return;
   const need=REMOTE.on&&!hasProfile();
@@ -1552,6 +1873,7 @@ document.addEventListener('click',e=>{
 $('#me-box').addEventListener('submit',e=>{
   e.preventDefault();
   const f=e.target.id,val=id=>{const el=$('#'+id);return el?norm(el.value):''};
+  if(f==='kyc-form'){kycSubmit();return}
   if(f==='me-test-form'||f==='me-profile-form'){
     const name=val('me-name').replace(/\s+/g,' '),phone=val('me-phone').replace(/[\s-]/g,'');
     if(name.length<2||name.length>30||/[<>]/.test(name)){meUi.msg=ERR_TEXT.bad_name;renderMe();return}
@@ -1728,6 +2050,7 @@ function show(v){
   if(v==='search')loadAds(false);
   if(v==='me')renderMe();
   if(v==='driver')paintAuth();
+  $$('[data-intro]').forEach(e=>{e.hidden=v!=='search'});
   VIEWS.forEach(n=>{$('#v-'+n).hidden=n!==v;$$('[data-copy="'+n+'"]').forEach(e=>{e.hidden=n!==v})});
   $$('[data-nav]').forEach(a=>{if(a.dataset.nav===v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   if(changed&&!ov.hidden)closeModal();
@@ -1744,6 +2067,7 @@ document.addEventListener('click',e=>{
   go(a.dataset.nav||a.dataset.navLink);
 });
 window.addEventListener('hashchange',()=>show(takePayHash()));
+document.addEventListener('click',e=>{const a=e.target.closest('[data-intro-search]');if(!a)return;e.preventDefault();const f=$('#s-form');if(f)f.scrollIntoView({behavior:'smooth',block:'start'});const o=$('#s-origin');if(o)try{o.focus({preventScroll:true})}catch(_){}});
 
 loadCalc({fuel:costOf(ROUTES[0]).fuel,toll:ROUTES[0].toll,other:OTHER,pax:3,preset:'0'});
 renderPreview();
